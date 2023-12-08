@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { 
     ClipboardDocumentCheckIcon, 
@@ -41,7 +41,7 @@ const Highlighted = ({
 
             <SyntaxHighlighter 
                 language="xml" 
-                style={nightOwl} 
+                style={atomDark} 
                 lineNumberContainerStyle={{
                     color: 'rgb(156 163 175)',
                     backgroundColor: '#f0f0f0',
