@@ -1,37 +1,40 @@
+'use client'
+
 import React from 'react'
-import PropTypes from 'prop-types'
-import HomeIcon from "@heroicons/react/20/solid/esm/HomeIcon";
+import { SunIcon, MoonIcon, HomeIcon } from '@heroicons/react/20/solid';
 import Link from "next/link";
+import { useThemeMode } from '../context';
 
+export default function Header() {
+    const {themeMode, saveThemeMode} = useThemeMode()
 
-Header.propsTypes = {
-    style: PropTypes.string
-}
+    const handleSetTheme = () => {
+        saveThemeMode(themeMode === 'dark' ? 'light' : 'dark');
+    }
 
-Header.defaultProps = {
-    style: `mx-20 h-20 text-slate-100 p-4 border-b border-slate-50/20`
-}
-
-export default function Header({
-    style
-}: {
-    style: string
-}) {
     return (
-        <header className={`${style}`}>
-            <div className="flex">
-                <Link href="/">
-                    <div className="flex px-2">
-                        <HomeIcon className="h-5 w-5" />
-                        <h1 className="ml-2">Home</h1>
-                    </div>
-                </Link>
+        <header className={themeMode}>
+            <div className={`mx-20 h-20 p-4 border-b 
+                dark:text-slate-100 dark:border-slate-50/20
+                text-neutral-800 border-neutral-950`}>
+            
+                <div className="flex justify-between">
+                    <Link href="/">
+                        <div className="flex px-2">
+                            <HomeIcon className="h-5 w-5" />
+                            <h1 className="ml-2">Home</h1>
+                        </div>
+                    </Link>
 
-                <div>
-                    {/* <h1 className="ml-2">Tailwind CSS - code example </h1> */}
+                    <div>
+                        <div className='flex px-2'>
+                            <button onClick={handleSetTheme}>
+                                {themeMode === 'dark' ? <SunIcon className='h-5 w-5 mx-1'/> : <MoonIcon className='h-5 w-5 mx-1'/> }
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </header>
     )
 }

@@ -11,7 +11,7 @@ const Rendered = ({
     const parsedCode = parse(codeString);
 
     return (
-        <div className={`shadow-2xl shadow-gray-600 ${height} w-full max-w-[700px] p-2 bg-gray-900 rounded-md border border-gray-500 m-1`}>
+        <div className={`shadow-sm shadow-teal-400 ${height} w-full p-1 max-w-[700px] bg-gray-900 rounded-md border border-gray-500 m-1`}>
             {parsedCode}
         </div>
     )

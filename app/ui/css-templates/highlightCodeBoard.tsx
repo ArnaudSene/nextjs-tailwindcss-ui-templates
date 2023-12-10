@@ -3,7 +3,6 @@ import Highlighted from './highlighted'
 import Rendered from './rendered'
 
 
-
 export default function HighLightCodeBoard({
     title,
     description,
@@ -30,7 +29,7 @@ export default function HighLightCodeBoard({
             </div>
 
             <div className={`flex items-center justify-center`}>
-                <Highlighted title={title} height={height} codeString={codeString} />
+                <Highlighted title={title} height={height} codeString={codeString} language="xml"/>
                 <Rendered height={height} codeString={codeRendredString} />
             </div>
         </div>

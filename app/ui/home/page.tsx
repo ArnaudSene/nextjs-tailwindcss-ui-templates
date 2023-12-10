@@ -13,13 +13,19 @@ export default function Home() {
 
             <MainTemplate>
                 <div className={`p-2`}>
-                    <div className={`border-b border-teal-200 w-fit`}>
-                        <h1>Some examples with CSS:</h1>
+                    <div className={`w-fit`}>
+                        <h1 className="font-semibold">Some examples with CSS:</h1>
                     </div>
-                    <div className={`p-2 text-sm`}>
+                    <div className={`my-2 text-sm`}>
                         <Link href={`/templates`}>Header and Footer with Tailwind CSS</Link>
                     </div>
+
+                    <div className={`my-2 text-sm`}>
+                        <Link href={`/shadeofcolors`}>Shade of color</Link>
+                    </div>
                 </div>
+
+                
             </MainTemplate>
 
             <Footer />
